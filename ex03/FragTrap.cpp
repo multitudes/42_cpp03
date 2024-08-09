@@ -6,20 +6,24 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:14:26 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:17:19 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:51:25 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( void ) 
-	: hitPoints(100), energyPoints(100), attackDamage(30) {
+FragTrap::FragTrap( void ) : ClapTrap("claptrap_clap_name")  {
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 	std::cout << "FragTrap default constructor called" << std::endl;
 	std::cout << "FragTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
 
-FragTrap::FragTrap( std::string const name ) 
-	: name(name), hitPoints(100), energyPoints(100), attackDamage(30) {
+FragTrap::FragTrap( std::string const name ) : ClapTrap(name + "_clap_name") {
+		this->hitPoints = 100;
+		this->energyPoints = 100;
+		this->attackDamage = 30;
 		std::cout << "FragTrap constructor called" << std::endl;
 		std::cout << "FragTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
@@ -68,6 +72,11 @@ void FragTrap::takeDamage( unsigned int amount ) {
 }
 
 void FragTrap::beRepaired( unsigned int amount ) {
-	this->hitPoints += amount;
-	std::cout << "FragTrap " << this->name << " has been repaired by " << amount << " points!" << std::endl;
+	if (this->energyPoints == 0) {
+		std::cout << "FragTrap " << this->name << " is out of energy!" << std::endl;
+	} else {
+		std::cout << "FragTrap " << this->name << " is being repaired for " << amount << " points!" << std::endl;
+		this->hitPoints += amount;
+		this->energyPoints -= 1;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:57:51 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:22:45 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:51:52 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 int main( void )
 {
 	DiamondTrap diamondtrap_def; // = DiamondTrap();
+	diamondtrap_def.whoAmI();
 	DiamondTrap diamondtrap = DiamondTrap("diamondtrap");
 	diamondtrap.attack("target");
 	diamondtrap.guardGate();

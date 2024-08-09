@@ -6,35 +6,34 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:15:21 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:25:08 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:53:29 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap( void ) 
-	: ClapTrap("diamondtrap_clap_name"), 
+	: ClapTrap("anon_DiamondTrap_clap_name"), 
 	  ScavTrap(), 
-	  FragTrap(),
-	  name("diamondtrap"),
-	  hitPoints(FragTrap::hitPoints),
-	  energyPoints(ScavTrap::energyPoints),
-	  attackDamage(FragTrap::attackDamage) 
-	  
+	  FragTrap()
 {
+	this->name = "anon_DiamondTrap";
+	this->hitPoints = FragTrap::hitPoints;
+	this->energyPoints = ScavTrap::energyPoints;
+	this->attackDamage = FragTrap::attackDamage;
 	std::cout << "DiamondTrap default constructor called" << std::endl;
 	std::cout << "DiamondTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
 
 DiamondTrap::DiamondTrap( std::string const name ) 
 	: ClapTrap(name + "_clap_name"),  
-	  ScavTrap(name), 
-	  FragTrap(name),
-	  name(name),
-	  hitPoints(FragTrap::hitPoints),
-	  energyPoints(ScavTrap::energyPoints),
-	  attackDamage(FragTrap::attackDamage) 
+	  ScavTrap(), 
+	  FragTrap()
 {
+	this->name = name;
+	this->hitPoints = FragTrap::hitPoints;
+	this->energyPoints = ScavTrap::energyPoints;
+	this->attackDamage = FragTrap::attackDamage;
 	std::cout << "DiamondTrap constructor called" << std::endl;
 	std::cout << "DiamondTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
