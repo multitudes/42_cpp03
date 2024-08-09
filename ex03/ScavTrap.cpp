@@ -6,14 +6,13 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:41:00 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:49:45 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:57:35 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap( void ) 
-	: ClapTrap("claptrap_clap_name") {
+ScavTrap::ScavTrap( void ) : ClapTrap("anonymous_scavtrap") {
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
@@ -21,8 +20,7 @@ ScavTrap::ScavTrap( void )
 	std::cout << "ScavTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
 
-ScavTrap::ScavTrap( std::string const name )
-	:  ClapTrap(name + "_clap_name") {
+ScavTrap::ScavTrap( std::string const name ) : ClapTrap(name) {
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;

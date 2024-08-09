@@ -6,13 +6,13 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:14:26 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:51:25 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:57:30 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap( void ) : ClapTrap("claptrap_clap_name")  {
+FragTrap::FragTrap( void ) : ClapTrap("anonymous_fragtrap")  {
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
@@ -20,7 +20,7 @@ FragTrap::FragTrap( void ) : ClapTrap("claptrap_clap_name")  {
 	std::cout << "FragTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
 
-FragTrap::FragTrap( std::string const name ) : ClapTrap(name + "_clap_name") {
+FragTrap::FragTrap( std::string const name ) : ClapTrap(name) {
 		this->hitPoints = 100;
 		this->energyPoints = 100;
 		this->attackDamage = 30;
