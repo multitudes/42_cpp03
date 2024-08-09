@@ -61,4 +61,4 @@ Performance overhead: Virtual inheritance can introduce some performance overhea
 Always declare the destructor as virtual in the base class when using virtual inheritance to ensure proper object destruction.
 
 ## links
-
+https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem  
