@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:21:58 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:01:56 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:01:25 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ ClapTrap::ClapTrap( void ) : name("anon claptrap"), hitpoints(10), energyPoints(
  * @param name 
  * @return ClapTrap
  */
-ClapTrap::ClapTrap( std::string const name ) : name(name) ,hitpoints(10), energyPoints(10), attackDamage(0) {
+ClapTrap::ClapTrap( std::string const name ) : name(name), hitpoints(10), energyPoints(10), attackDamage(0) {
 	debug("ClapTrap constructor called");
 }
 
-/** 
+/**
  * @brief Destroy the Clap Trap:: Clap Trap object
  */
 ClapTrap::~ClapTrap ( void ) {
@@ -57,12 +57,9 @@ ClapTrap::ClapTrap(const ClapTrap& copy) {
  * @param assign 
  * @return ClapTrap&
  * Used to assign an existing object to another existing object.
- * For clarity I write everything down but really this is 
- * the default implementation of the assignment operator already and I could just leave it 
- * blank, since I do not have any dynamically allocated memory.
  */
-ClapTrap& ClapTrap::operator=(const ClapTrap& assign) {
-	std::cout << "ClapTrap assignment operator called" << std::endl;
+ClapTrap &ClapTrap::operator=(const ClapTrap& assign) {
+	debug("ClapTrap assignation operator called");
 	if (this != &assign) {
 		this->name = assign.name;
 		this->hitpoints = assign.hitpoints;
@@ -76,14 +73,13 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& assign) {
  * @brief ClapTrap::attack
  * 
  * @param target 
- * attack costs 1 energy point
  */
 void ClapTrap::attack(const std::string &target) {
 	if (this->energyPoints == 0 || this->hitpoints == 0) {
 		std::cout << "ClapTrap " << this->name << " is out of energy!" << std::endl;
 	} else {
-		std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
-		this->energyPoints -= 1;
+	std::cout << "ClapTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+	this->energyPoints -= 1;
 	}
 }
 
@@ -91,11 +87,9 @@ void ClapTrap::attack(const std::string &target) {
  * @brief ClapTrap::takeDamage
  * 
  * @param amount 
- * 
- * 
  */
 void ClapTrap::takeDamage(unsigned int amount) {
-	if (this->hitpoints >= amount) {
+	if (this->hitpoints >= (int)amount) {
 		this->hitpoints -= amount;
 		std::cout << this->name << " takes " << amount << " points of damage!" << std::endl;
 	} else {
@@ -108,12 +102,10 @@ void ClapTrap::takeDamage(unsigned int amount) {
  * @brief ClapTrap::beRepaired
  * 
  * @param amount 
- * Here the various cases are handled in which the ClapTrap can be repaired or not.
- * repair costs 1 energy point
  */
 void ClapTrap::beRepaired(unsigned int amount) {
 	if (this->energyPoints == 0) {
-		std::cout << this->name << " is out of energy cannot repair!" << std::endl;
+		std::cout << "ClapTrap " << this->name << " is out of energy cannot repair!" << std::endl;
 	} else {
 		std::cout << this->name << " is being repaired for " << amount << " points!" << std::endl;
 		this->hitpoints += amount;
