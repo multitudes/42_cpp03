@@ -1,6 +1,6 @@
 # 42_cpp03
 
-In this module we will practice inheritance.  For this we will create a base class called TrapClap and then we will have a ScavTrap and Fragatrap and battle the diamond problem in DiamondTrap!   
+In this module we will practice inheritance.  For this we will create a base class called TrapClap and then we will have a ScavTrap and FragTrap and a battle for the diamond problem in DiamondTrap!   
 (look up the video game Borderlands to know more about the characters, these are iconic robots known for their unique personalities and combat abilities).
 
 
