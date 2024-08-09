@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:41:00 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:04:26 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:07:50 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
  */
 ScavTrap::ScavTrap( void ) : ClapTrap("anon scavtrap") {
 	debug("Anon ScavTrap default constructor called");
+	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 }
@@ -32,6 +33,7 @@ ScavTrap::ScavTrap( void ) : ClapTrap("anon scavtrap") {
  */
 ScavTrap::ScavTrap( std::string const name ): ClapTrap(name) {
 	debug("ScavTrap constructor called");
+	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
 }
@@ -84,7 +86,7 @@ void ScavTrap::attack(const std::string &target) {
 	if (this->energyPoints == 0 || this->hitPoints == 0) {
 		std::cout << "ScavTrap " << this->name << " is out of energy!" << std::endl;
 	} else {
-	std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
-	this->energyPoints -= 1;
+		std::cout << "ScavTrap " << this->name << " attacks " << target << ", causing " << this->attackDamage << " points of damage!" << std::endl;
+		this->energyPoints -= 1;
 	}
 }

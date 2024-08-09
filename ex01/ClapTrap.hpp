@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:20:03 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/07 11:02:36 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:05:16 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ class ClapTrap {
 		
 	protected:
 		std::string name;
-		int hitpoints;
-		int energyPoints;
-		int attackDamage;
+		unsigned int hitPoints;
+		unsigned int energyPoints;
+		unsigned int attackDamage;
 };
 
 #endif  // CLAPTRAP_HPP_

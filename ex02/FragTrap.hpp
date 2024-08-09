@@ -1,42 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/28 09:20:03 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:04:26 by lbrusa           ###   ########.fr       */
+/*   Created: 2024/03/29 13:14:11 by lbrusa            #+#    #+#             */
+/*   Updated: 2024/08/09 17:06:37 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-/**
- * @brief ClapTrap class
- */
-class ClapTrap {
+class FragTrap : public ClapTrap {
 	public:
-		ClapTrap( void );
-		ClapTrap(std::string const name);
-		~ClapTrap( void );
-		ClapTrap(const ClapTrap& copy);
-		ClapTrap &operator=(const ClapTrap& assign);
+		FragTrap( void );
+		FragTrap(std::string const name);
+		~FragTrap( void );
+		FragTrap(const FragTrap& copy);
+		FragTrap &operator=(const FragTrap& assign);
 
 		// member functions
+		void highFivesGuys(void);
+		//inherited:
 		void attack(const std::string &target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		
-	private:
-		std::string name;
-		unsigned int hitPoints;
-		unsigned int energyPoints;
-		unsigned int attackDamage;
 };
 
-#endif  // CLAPTRAP_HPP_
+#endif  // FRAGTRAP_HPP_

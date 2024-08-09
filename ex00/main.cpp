@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:14:34 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 16:50:35 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/09 17:04:26 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int main( void )
 	// // recharge but cannot because no energy points
 	// claptrap.beRepaired(10);
 
-	// claptrap2.beRepaired(10); // too many hitpoints already
+	// claptrap2.beRepaired(10); // too many hitPoints already
 	// claptrap2.attack("claptrap"); 
 	// claptrap2.takeDamage(9);
 	// claptrap2.beRepaired(9);
