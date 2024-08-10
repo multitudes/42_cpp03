@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:14:11 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:36:11 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/10 12:34:57 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class FragTrap : virtual public ClapTrap {
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-
-
 };
 
 #endif  // FRAGTRAP_HPP_

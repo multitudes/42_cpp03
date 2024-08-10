@@ -28,11 +28,11 @@ fclean : clean
 
 re : fclean all
 
-run:
+run: all
 	@echo
 	@PATH=".$${PATH:+:$${PATH}}" && $(NAME) $(ARGS)
 
-valrun:
+valrun: all
 	@echo
 	@PATH=".$${PATH:+:$${PATH}}" && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes $(NAME) $(ARGS)
 

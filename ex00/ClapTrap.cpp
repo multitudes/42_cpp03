@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:21:58 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:04:26 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/10 12:33:15 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,8 @@ ClapTrap::~ClapTrap ( void ) {
  * @param copy
  * Used to create a new object as a copy of an existing object.
  */
-ClapTrap::ClapTrap(const ClapTrap& copy) {
+ClapTrap::ClapTrap(const ClapTrap& copy) : name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackDamage(copy.attackDamage) {
 	debug("ClapTrap copy constructor called");
-	*this = copy;
 }
 
 /**

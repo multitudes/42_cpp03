@@ -5,7 +5,7 @@ CXXFLAGS += -Wshadow -Wconversion -Wunreachable-code
 CXXFLAGS += -g3 -O0
 
 # Uncomment this line to turn off debug flags
-CXXFLAGS += -DNDEBUG
+# CXXFLAGS += -DNDEBUG
 
 CXX = c++
 

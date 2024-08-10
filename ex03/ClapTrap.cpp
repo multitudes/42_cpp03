@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:21:58 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:14:22 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/10 12:11:54 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ ClapTrap::~ClapTrap ( void ) {
 	std::cout << "ClapTrap destructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap& copy) {
+ClapTrap::ClapTrap(const ClapTrap& copy) : name(copy.name), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackDamage(copy.attackDamage) {
 	std::cout << "ClapTrap copy constructor called" << std::endl;
-	*this = copy;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap& assign) {

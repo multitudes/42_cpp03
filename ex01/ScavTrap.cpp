@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:41:00 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:04:26 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/10 12:30:11 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
  */
 ScavTrap::ScavTrap( void ) : ClapTrap("anon scavtrap") {
 	debug("Anon ScavTrap default constructor called");
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+	energyPoints = 50;
+	attackDamage = 20;
 }
 
 /**
@@ -31,9 +31,9 @@ ScavTrap::ScavTrap( void ) : ClapTrap("anon scavtrap") {
  * @param name 
  */
 ScavTrap::ScavTrap( std::string const name ): ClapTrap(name) {
+	energyPoints = 50;
+	attackDamage = 20;
 	debug("ScavTrap constructor called");
-	this->energyPoints = 50;
-	this->attackDamage = 20;
 }
 
 /**
@@ -49,9 +49,10 @@ ScavTrap::~ScavTrap( void ) {
  * @param copy
  * Used to create a new object as a copy of an existing object.
  */
-ScavTrap::ScavTrap(const ScavTrap& copy) {
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
+	energyPoints = copy.energyPoints;
+	attackDamage = copy.attackDamage;
 	debug("ScavTrap copy constructor called");
-	*this = copy;
 }
 
 /**

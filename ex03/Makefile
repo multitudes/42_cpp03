@@ -1,5 +1,5 @@
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-CXXFLAGS += -Wshadow 
+# CXXFLAGS += -Wshadow 
 CXXFLAGS += -Wconversion -Wunreachable-code
 CXXFLAGS += -Wno-shadow
 # CXXFLAGS += -pedantic
