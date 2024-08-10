@@ -13,25 +13,43 @@ Initializer lists are generally preferred over assignment within constructors fo
 
 Example of an initializer list:
 ```cpp
-ScavTrap::ScavTrap(const ScavTrap& copy)
-    : ClapTrap(copy),
-      energyPoints(copy.energyPoints),
-      attackDamage(copy.attackDamage) {
-    // print copy constructor message
+ClapTrap::ClapTrap( void ) : name("anon claptrap"), hitPoints(10), energyPoints(10), attackDamage(0) {
+	debug("ClapTrap default constructor called");
 }
 ```
 The above is considered better than:
 ```cpp
-ScavTrap::ScavTrap(const ScavTrap& copy) {
+ClapTrap::ClapTrap(const ClapTrap& copy) {
 	*this = copy;
 	// print copy constructor message
 }
 ```
 
 In the first example, the ClapTrap base class is initialized first using the base class copy constructor, followed by the initialization of energyPoints and attackDamage members.
+ex
+```cpp
 
-There are cases where assignment might be necessary within a constructor however it's usually preferable to use initializer lists for member initialization.
 
+### A caveat
+So you now think that you can use initializer lists everywhere, right? Not quite. In the derived class constructor for instance they would not work on inherited members. For those you still need to assign then in the constructor body.  
+```cpp
+ScavTrap::ScavTrap( std::string const name ): ClapTrap(name) {
+	energyPoints = 50;
+	attackDamage = 20;
+	debug("ScavTrap constructor called");
+}
+```
+
+### Can I have a const name?
+lets do it, try it! If I put my name as const in the constructor, it will break the assignment operator in cpp98.
+
+## New flags in my makefile
+
+- `-Wshadow` This flag is used to warn whenever a local variable shadows another local variable, parameter, or global variable. This flag is useful in preventing bugs that can be introduced by shadowing.
+- `-Wconversion` This flag is used to warn for implicit conversions that may alter a value. This includes conversions between real and integer, like int to float, or pointer to int. It also warns for conversions between signed and unsigned integers. Note that this warning is on by default in C++.
+- `-Wunreachable-code` This flag is used to warn when the compiler detects that code will never be executed. 
+
+# The assignments
 ## ex00
 Creating a ClapTrap base class. Initially, I set its properties to private.
 
@@ -58,11 +76,11 @@ We create a DiamondTrap which inherits from both the ScavTrap and FragTrap. Of c
 
 The Diamond Problem is a common issue that arises in object-oriented programming languages that support multiple inheritance. It's named after the shape of the class diagram that illustrates the problem, which looks like a diamond.
 ```
-	A
+  A
  / \
 B   C
  \ /
-	D
+  D
 ```
 In the diagram above, class D inherits from both B and C. If B and C have a member function with the same name, which one does D inherit? C++ allows multiple inheritance, but it has its own way of solving the diamond problem: through the use of virtual inheritance. By declaring the inheritance from A to B and C as virtual, C++ ensures that only one copy of A's members is included in D. This means that there's only one possible implementation of the method in D, which avoids ambiguity.
 
