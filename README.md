@@ -2,6 +2,36 @@
 
 In this module, we will practice inheritance. For this, we will create a base class called TrapClap. Then, we will have a ScavTrap and FragTrap, and a battle for the diamond problem in DiamondTrap! (Look up the video game Borderlands to know more about the characters. These are iconic robots known for their unique personalities and combat abilities).
 
+## Initializer Lists vs. Assignment in Copy Constructors
+Understanding the Difference
+
+Initializer lists are generally preferred over assignment within constructors for several reasons:
+
+- Efficiency: Initializer lists directly initialize members, avoiding unnecessary default construction and subsequent assignment.
+- Correctness: For members with no default constructors (e.g., const members or members of classes without default constructors), initializer lists are mandatory.
+- Clarity: Explicitly initializing members in the initializer list improves code readability and maintainability.
+
+Example of an initializer list:
+```cpp
+ScavTrap::ScavTrap(const ScavTrap& copy)
+    : ClapTrap(copy),
+      energyPoints(copy.energyPoints),
+      attackDamage(copy.attackDamage) {
+    // print copy constructor message
+}
+```
+The above is considered better than:
+```cpp
+ScavTrap::ScavTrap(const ScavTrap& copy) {
+	*this = copy;
+	// print copy constructor message
+}
+```
+
+In the first example, the ClapTrap base class is initialized first using the base class copy constructor, followed by the initialization of energyPoints and attackDamage members.
+
+There are cases where assignment might be necessary within a constructor however it's usually preferable to use initializer lists for member initialization.
+
 ## ex00
 Creating a ClapTrap base class. Initially, I set its properties to private.
 
