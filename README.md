@@ -49,6 +49,63 @@ lets do it, try it! If I put my name as const in the constructor, it will break 
 - `-Wconversion` This flag is used to warn for implicit conversions that may alter a value. This includes conversions between real and integer, like int to float, or pointer to int. It also warns for conversions between signed and unsigned integers. Note that this warning is on by default in C++.
 - `-Wunreachable-code` This flag is used to warn when the compiler detects that code will never be executed. 
 
+## Virtual destructor
+
+### When to Declare a Virtual Destructor
+
+A virtual destructor should be declared in the base class of a polymorphic class hierarchy. This ensures that the correct destructor is called when deleting a derived class object through a base class pointer.
+
+Ex
+```cpp
+class Base {
+public:
+    virtual ~Base() { std::cout << "Base destructor called\n"; }
+};
+
+class Derived : public Base {
+public:
+    ~Derived() override { std::cout << "Derived destructor called\n"; }
+};
+
+int main() {
+    Base* ptr = new Derived();
+    delete ptr; // Correctly calls both Derived and Base destructors
+}
+
+```
+
+## Virtual Destructors in Diamond Inheritance
+
+In a diamond inheritance scenario with virtual inheritance, only the base class needs to have a virtual destructor.
+
+ex
+```cpp
+class ClapTrap {
+public:
+    virtual ~ClapTrap() { std::cout << "ClapTrap destructor called\n"; }
+    // ...
+};
+
+class FragTrap : virtual public ClapTrap {
+public:
+    // ~FragTrap() { std::cout << "FragTrap destructor called\n"; } // Optional
+    // ...
+};
+
+class ScavTrap : virtual public ClapTrap {
+public:
+    // ~ScavTrap() { std::cout << "ScavTrap destructor called\n"; } // Optional
+    // ...
+};
+
+class DiamondTrap : public FragTrap, public ScavTrap {
+public:
+    ~DiamondTrap() { std::cout << "DiamondTrap destructor called\n"; }
+    // ...
+};
+```
+
+
 # The assignments
 ## ex00
 Creating a ClapTrap base class. Initially, I set its properties to private.

@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 16:14:41 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:32:42 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/11 10:32:09 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
 	public:
 		DiamondTrap( void );
 		DiamondTrap(std::string const name);
-		virtual ~DiamondTrap( void );
+		~DiamondTrap( void );
 		DiamondTrap(const DiamondTrap& copy);
 		DiamondTrap &operator=(const DiamondTrap& assign);
 

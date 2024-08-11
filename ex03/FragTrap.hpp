@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:14:11 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/10 12:34:57 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/11 10:32:14 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class FragTrap : virtual public ClapTrap {
 	public:
 		FragTrap( void );
 		FragTrap(std::string const name);
-		virtual ~FragTrap( void );
+		~FragTrap( void );
 		FragTrap(const FragTrap& copy);
 		FragTrap &operator=(const FragTrap& assign);
 

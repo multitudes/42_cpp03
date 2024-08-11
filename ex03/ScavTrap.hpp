@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:41:11 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:36:15 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/11 10:32:18 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class ScavTrap : virtual public ClapTrap {
 	public :
 		ScavTrap( void );
 		ScavTrap( std::string const name);
-		virtual ~ScavTrap( void );
+		~ScavTrap( void );
 		ScavTrap(const ScavTrap& copy);
 		ScavTrap &operator=(const ScavTrap& assign);
 		
