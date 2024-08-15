@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:14:11 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/15 10:04:31 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/15 10:11:59 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
  * After all, ClapTraps are aware of their individuality.
  * Since the DiamondTrap will inherit from both ScavTrap and FragTrap, the member variables hitPoints, energyPoints and attackDamage
  * have to be declared in the FragTrap class. But the name will be inherited from the ClapTrap class.
+ * The important thing is that the FragTrap class is a virtual class, so that the DiamondTrap class can inherit
+ * from both the ScavTrap and FragTrap classes without having multiple instances of the ClapTrap class.
  */
 class FragTrap : virtual public ClapTrap {
 	public:
