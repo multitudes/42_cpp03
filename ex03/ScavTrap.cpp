@@ -6,24 +6,29 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:41:00 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/09 17:57:35 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/15 09:53:52 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+#include <iostream>
 
-ScavTrap::ScavTrap( void ) : ClapTrap("anonymous_scavtrap") {
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+/**
+ * @brief Default Constructor
+ */
+ScavTrap::ScavTrap( void ) : ClapTrap("anonymous_scavtrap"), hitPoints(100), energyPoints(50), attackDamage(20) {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	std::cout << "ScavTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
 
-ScavTrap::ScavTrap( std::string const name ) : ClapTrap(name) {
-	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
+/**
+ * @brief Constructor with name
+ * 
+ * Using an initiaization list to call the ClapTrap constructor is better, but also it is in this case
+ * necessary to declare the member variables like hitPoints energyPoints and attackDamage in the ScavTrap and FrgTrap classes
+ * because the DiamondTrap will inherit them.
+ */
+ScavTrap::ScavTrap( std::string const name ) : ClapTrap(name), hitPoints(100), energyPoints(50), attackDamage(20) {
 	std::cout << "ScavTrap constructor called" << std::endl;
 	std::cout << "ScavTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }

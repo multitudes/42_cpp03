@@ -1,14 +1,11 @@
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 # CXXFLAGS += -Wshadow 
 CXXFLAGS += -Wconversion -Wunreachable-code
-CXXFLAGS += -Wno-shadow
+CXXFLAGS += 
 # CXXFLAGS += -pedantic
 
 # -O0: Disables optimization to make debugging easier..
 CXXFLAGS += -g3 -O0
-# Uncomment this line to turn off debug flags
-# CXXFLAGS += -DNDEBUG
-
 
 CXX = c++
 

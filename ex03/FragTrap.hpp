@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 13:14:11 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/11 10:32:14 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/15 10:04:31 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,19 @@
 
 #include "ClapTrap.hpp"
 
+/**
+ * @brief Create a derived robot.
+ * It will be named FragTrap and will inherit the constructors and destructor from ClapTrap. 
+ * However, its constructors, destructor and attack() will print different messages. 
+ * After all, ClapTraps are aware of their individuality.
+ * Since the DiamondTrap will inherit from both ScavTrap and FragTrap, the member variables hitPoints, energyPoints and attackDamage
+ * have to be declared in the FragTrap class. But the name will be inherited from the ClapTrap class.
+ */
 class FragTrap : virtual public ClapTrap {
 	public:
 		FragTrap( void );
 		FragTrap(std::string const name);
-		~FragTrap( void );
+		virtual ~FragTrap( void );
 		FragTrap(const FragTrap& copy);
 		FragTrap &operator=(const FragTrap& assign);
 
@@ -29,6 +37,11 @@ class FragTrap : virtual public ClapTrap {
 		void attack(const std::string &target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+
+	protected:
+		unsigned int hitPoints;
+		unsigned int energyPoints;
+		unsigned int attackDamage;
 };
 
 #endif  // FRAGTRAP_HPP_

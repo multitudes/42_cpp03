@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:57:51 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/11 10:33:18 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/15 10:05:17 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,22 @@
 
 int main( void )
 {
+	    // Create a DiamondTrap object
+    DiamondTrap original("Original");
+
+    // Create another DiamondTrap object using the copy constructor
+    DiamondTrap copy(original);
+
+	copy.whoAmI();
 	// DiamondTrap diamondtrap_def; // = DiamondTrap();
 	// diamondtrap_def.whoAmI();
-	DiamondTrap diamondtrap = DiamondTrap("diamondtrap");
+	// DiamondTrap diamondtrap = DiamondTrap("diamondtrap");
 	// diamondtrap.attack("target");
 	// diamondtrap.guardGate();
 	// diamondtrap.highFivesGuys();
 	// diamondtrap.takeDamage(10);
 	// diamondtrap.beRepaired(10);
-	diamondtrap.whoAmI();
+	// diamondtrap.whoAmI();
 
 	// ScavTrap scavtrap = ScavTrap("scavvy");
 	// FragTrap fragtrap = FragTrap("fraggy");

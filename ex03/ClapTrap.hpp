@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:20:03 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/11 10:35:52 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/08/15 09:51:21 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 
 #include <iostream>
 
+/**
+ * @brief Create a base class ClapTrap
+ */
 class ClapTrap {
 	public:
 		ClapTrap( void );
