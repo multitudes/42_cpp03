@@ -1,5 +1,5 @@
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-# CXXFLAGS += -Wshadow 
+CXXFLAGS += -Wshadow  #With -Wshadow enabled, the compiler would issue a warning about a inner variable shadowing the outer one.
 CXXFLAGS += -Wconversion -Wunreachable-code
 CXXFLAGS += 
 # CXXFLAGS += -pedantic
