@@ -6,7 +6,7 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:20:03 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/15 09:51:21 by lbrusa           ###   ########.fr       */
+/*   Updated: 2025/02/19 14:19:11 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,24 @@
 
 #include <iostream>
 
-/**
- * @brief Create a base class ClapTrap
- */
 class ClapTrap {
-	public:
-		ClapTrap( void );
-		ClapTrap(std::string const name);
-		virtual ~ClapTrap( void );
-		ClapTrap(const ClapTrap& copy);
-		ClapTrap &operator=(const ClapTrap& assign);
+public:
+  ClapTrap(void);
+  ClapTrap(std::string const name);
+  virtual ~ClapTrap(void);
+  ClapTrap(const ClapTrap &copy);
+  ClapTrap &operator=(const ClapTrap &assign);
 
-		// member functions
-		virtual void attack(const std::string &target);
-		virtual void takeDamage(unsigned int amount);
-		virtual void beRepaired(unsigned int amount);
-		
-	protected:
-		std::string name;
-		unsigned int hitPoints;
-		unsigned int energyPoints;
-		unsigned int attackDamage;
+  // member functions
+  virtual void attack(const std::string &target);
+  virtual void takeDamage(unsigned int amount);
+  virtual void beRepaired(unsigned int amount);
+
+protected:
+  std::string name;
+  unsigned int hitPoints;
+  unsigned int energyPoints;
+  unsigned int attackDamage;
 };
 
-#endif  // CLAPTRAP_HPP_
+#endif // CLAPTRAP_HPP_

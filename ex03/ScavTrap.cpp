@@ -6,29 +6,24 @@
 /*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 12:41:00 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/15 10:12:39 by lbrusa           ###   ########.fr       */
+/*   Updated: 2025/02/19 14:11:33 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <iostream>
 
-/**
- * @brief Default Constructor
- */
-ScavTrap::ScavTrap( void ) : ClapTrap("anonymous_scavtrap"), hitPoints(100), energyPoints(50), attackDamage(20) {
+ScavTrap::ScavTrap( void ) : ClapTrap("anonymous_scavtrap"),
+	hitPoints(100),
+	energyPoints(50),
+	attackDamage(20) {
 	std::cout << "ScavTrap default constructor called" << std::endl;
 	std::cout << "ScavTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
 
-/**
- * @brief Constructor with name
- * 
- * Using an initiaization list to call the ClapTrap constructor is better, but also it is in this case
- * necessary to declare the member variables like hitPoints energyPoints and attackDamage in the ScavTrap and FrgTrap classes
- * because the DiamondTrap will inherit them.
- */
-ScavTrap::ScavTrap( std::string const name ) : ClapTrap(name), hitPoints(100), energyPoints(50), attackDamage(20) {
+ScavTrap::ScavTrap( std::string const name ) : ClapTrap(name),
+	hitPoints(100),
+	energyPoints(50),
+	attackDamage(20) {
 	std::cout << "ScavTrap constructor called" << std::endl;
 	std::cout << "ScavTrap " << this->name << " has " << this->hitPoints << " hitPoints, " << this->energyPoints << " energy points and " << this->attackDamage << " attack damage" << std::endl;
 }
@@ -37,8 +32,9 @@ ScavTrap::~ScavTrap( void ) {
 	std::cout << "ScavTrap destructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy), hitPoints(copy.hitPoints), energyPoints(copy.energyPoints), attackDamage(copy.attackDamage) {
+ScavTrap::ScavTrap(const ScavTrap& copy) : ClapTrap(copy) {
 	std::cout << "ScavTrap copy constructor called" << std::endl;
+	*this = copy;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap& assign) {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbrusa <lbrusa@student.42berlin.de>        +#+  +:+       +#+        */
+/*   By: lbrusa <lbrusa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 09:20:03 by lbrusa            #+#    #+#             */
-/*   Updated: 2024/08/10 12:25:45 by lbrusa           ###   ########.fr       */
+/*   Updated: 2024/09/27 17:57:00 by lbrusa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class ClapTrap {
 
 		// member functions
 		virtual void attack(const std::string &target);
-		virtual void takeDamage(unsigned int amount);
+		virtual void takeDamage(unsigned int amount); // not needed?
 		virtual void beRepaired(unsigned int amount);
 		
 	protected:

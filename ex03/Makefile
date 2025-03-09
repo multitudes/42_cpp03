@@ -1,11 +1,14 @@
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-CXXFLAGS += -Wshadow  #With -Wshadow enabled, the compiler would issue a warning about a inner variable shadowing the outer one.
+# CXXFLAGS += -Wshadow 
 CXXFLAGS += -Wconversion -Wunreachable-code
-CXXFLAGS += 
+CXXFLAGS += -Wno-shadow
 # CXXFLAGS += -pedantic
 
 # -O0: Disables optimization to make debugging easier..
 CXXFLAGS += -g3 -O0
+# Uncomment this line to turn off debug flags
+# CXXFLAGS += -DNDEBUG
+
 
 CXX = c++
 
@@ -38,4 +41,4 @@ valrun: all
 	@echo
 	@PATH=".$${PATH:+:$${PATH}}" && valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes --track-fds=yes $(NAME) $(ARGS)
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re run valrun
